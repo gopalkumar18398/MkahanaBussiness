@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mithila Makhana — Premium Fox Nuts from Bihar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EDD8;
+    --warm-white: #FAF6EF;
+    --saffron: #E8850A;
+    --deep-saffron: #C4600A;
+    --forest: #2C4A2E;
+    --forest-light: #3D6640;
+    --earth: #6B4226;
+    --gold: #C9922B;
+    --gold-light: #F2C96B;
+    --text-dark: #1A120A;
+    --text-mid: #4A3728;
+    --text-light: #8C7560;
+    --border: rgba(200,160,80,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-bar {
+    background: var(--forest);
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    padding: 8px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-flex;
+    gap: 60px;
+    animation: marquee 28s linear infinite;
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: var(--saffron);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+  }
+  .logo-sub { font-size: 10px; letter-spacing: 0.2em; color: var(--text-light); font-weight: 500; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--text-mid); font-size: 14px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--saffron); }
+  .nav-cta {
+    background: var(--saffron);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav-cta:hover { background: var(--deep-saffron); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-left {
+    background: var(--cream);
+    padding: 80px 6% 80px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--forest);
+    letter-spacing: 0.1em;
+    width: fit-content;
+    margin-bottom: 28px;
+    animation: fadeUp .6s ease both;
+  }
+  .badge-dot { width: 7px; height: 7px; background: #4CAF50; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(1.4); } }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 900;
+    line-height: 1.08;
+    color: var(--text-dark);
+    animation: fadeUp .6s .1s ease both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--saffron);
+  }
+  .hero-desc {
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 420px;
+    animation: fadeUp .6s .2s ease both;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 40px;
+    animation: fadeUp .6s .3s ease both;
+  }
+  .stat-val { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--saffron); }
+  .stat-lbl { font-size: 12px; color: var(--text-light); font-weight: 500; margin-top: 2px; }
+  .hero-btns {
+    display: flex;
+    gap: 14px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+    animation: fadeUp .6s .4s ease both;
+  }
+  .btn-primary {
+    background: var(--forest);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--forest-light); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--text-dark);
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: 1.5px solid var(--text-dark);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover { background: var(--text-dark); color: white; }
+
+  .hero-right {
+    background: linear-gradient(135deg, var(--forest) 0%, #1a2e1c 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+  .orb1 { width: 500px; height: 500px; background: var(--gold); top: -100px; right: -100px; }
+  .orb2 { width: 300px; height: 300px; background: var(--saffron); bottom: -60px; left: -60px; }
+
+  .hero-product-card {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    animation: fadeUp .8s .2s ease both;
+  }
+  .hero-emoji { font-size: 120px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)); animation: float 4s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+  .hero-product-card h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-top: 24px; }
+  .hero-product-card p { font-size: 14px; opacity: .7; margin-top: 8px; }
+  .hero-price-tag {
+    display: inline-block;
+    background: var(--saffron);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 16px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    color: var(--saffron);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.15;
+  }
+  .section-sub {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--forest);
+    padding: 28px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+  }
+  .trust-icon { font-size: 24px; }
+  .trust-text strong { display: block; font-size: 14px; font-weight: 600; }
+  .trust-text span { font-size: 12px; opacity: .65; }
+
+  /* ── PRODUCTS ── */
+  .products-section {
+    padding: 90px 5%;
+    background: var(--warm-white);
+  }
+  .filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .filter-tab {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .2s;
+    color: var(--text-mid);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .filter-tab.active, .filter-tab:hover {
+    background: var(--forest);
+    color: white;
+    border-color: var(--forest);
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform .25s, box-shadow .25s;
+    position: relative;
+    cursor: pointer;
+    animation: fadeUp .5s ease both;
+  }
+  .product-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.1); }
+
+  .product-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    z-index: 2;
+  }
+  .badge-new { background: var(--forest); color: white; }
+  .badge-hot { background: var(--saffron); color: white; }
+  .badge-organic { background: #4CAF50; color: white; }
+  .badge-bestseller { background: var(--gold); color: white; }
+  .badge-premium { background: var(--earth); color: white; }
+
+  .product-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.05) 100%);
+  }
+  .product-body { padding: 20px; }
+  .product-category { font-size: 11px; font-weight: 600; color: var(--saffron); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+  .product-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-dark); line-height: 1.25; }
+  .product-desc { font-size: 13px; color: var(--text-light); margin-top: 8px; line-height: 1.6; }
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .product-price { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text-dark); }
+  .product-price span { font-size: 12px; color: var(--text-light); font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .product-stars { font-size: 12px; color: var(--gold); }
+  .add-cart {
+    background: var(--saffron);
+    color: white;
+    border: none;
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, transform .15s;
+    flex-shrink: 0;
+  }
+  .add-cart:hover { background: var(--deep-saffron); transform: scale(1.1); }
+
+  /* ── BENEFITS ── */
+  .benefits-section {
+    padding: 90px 5%;
+    background: var(--cream);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .benefit-card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: transform .2s;
+  }
+  .benefit-card:hover { transform: translateY(-4px); }
+  .benefit-icon { font-size: 42px; margin-bottom: 16px; }
+  .benefit-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .benefit-text { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+
+  /* ── ABOUT ── */
+  .about-section {
+    padding: 90px 5%;
+    background: var(--forest);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-eyebrow { font-size: 11px; letter-spacing: 0.25em; color: var(--gold-light); font-weight: 600; margin-bottom: 16px; }
+  .about-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 48px); font-weight: 800; line-height: 1.2; }
+  .about-text { font-size: 15px; opacity: .8; line-height: 1.8; margin-top: 20px; }
+  .about-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+  .about-tag {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: .85;
+  }
+  .about-right { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .about-stat-box {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+  }
+  .about-stat-val { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; color: var(--gold-light); }
+  .about-stat-lbl { font-size: 12px; opacity: .65; margin-top: 6px; line-height: 1.5; }
+
+  /* ── TESTIMONIALS ── */
+  .reviews-section { padding: 90px 5%; background: var(--warm-white); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+  .review-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    transition: transform .2s;
+  }
+  .review-card:hover { transform: translateY(-3px); }
+  .review-stars { font-size: 16px; color: var(--gold); margin-bottom: 14px; }
+  .review-text { font-size: 14px; color: var(--text-mid); line-height: 1.7; font-style: italic; }
+  .review-author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+  .review-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .review-name { font-weight: 600; font-size: 14px; }
+  .review-loc { font-size: 12px; color: var(--text-light); }
+
+  /* ── NEWSLETTER ── */
+  .newsletter-section {
+    background: var(--saffron);
+    padding: 70px 5%;
+    text-align: center;
+    color: white;
+  }
+  .newsletter-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,46px); font-weight: 800; margin-bottom: 14px; }
+  .newsletter-section p { font-size: 16px; opacity: .88; margin-bottom: 32px; }
+  .newsletter-form { display: flex; max-width: 480px; margin: 0 auto; gap: 0; border-radius: 50px; overflow: hidden; background: white; }
+  .newsletter-input { flex: 1; border: none; outline: none; padding: 16px 22px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: transparent; }
+  .newsletter-btn { background: var(--forest); color: white; border: none; padding: 16px 28px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background .2s; flex-shrink: 0; }
+  .newsletter-btn:hover { background: var(--forest-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 5% 30px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; margin-bottom: 14px; }
+  .footer-tagline { font-size: 13px; opacity: .55; line-height: 1.7; max-width: 260px; }
+  .footer-col h4 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: .5; margin-bottom: 18px; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color .2s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap-16; }
+  .footer-copy { font-size: 13px; opacity: .4; }
+  .footer-social { display: flex; gap: 14px; }
+  .social-btn {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background .2s;
+    cursor: pointer;
+  }
+  .social-btn:hover { background: var(--saffron); }
+
+  /* ── CART DRAWER ── */
+  .cart-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+    z-index: 1998; opacity: 0; pointer-events: none;
+    transition: opacity .3s;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+  .cart-drawer {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: 380px; max-width: 100vw;
+    background: white;
+    z-index: 1999;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    display: flex; flex-direction: column;
+  }
+  .cart-drawer.open { transform: translateX(0); }
+  .cart-head {
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .cart-head h3 { font-family: 'Playfair Display', serif; font-size: 22px; }
+  .cart-close { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-dark); }
+  .cart-items { flex: 1; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+  .cart-empty { text-align: center; margin-top: 80px; }
+  .cart-empty-icon { font-size: 64px; }
+  .cart-empty p { font-size: 15px; color: var(--text-light); margin-top: 14px; }
+  .cart-item {
+    display: flex; gap: 14px; align-items: center;
+    padding: 14px; background: var(--warm-white); border-radius: 14px;
+  }
+  .ci-emoji { font-size: 36px; }
+  .ci-name { font-weight: 600; font-size: 14px; }
+  .ci-price { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+  .ci-remove { margin-left: auto; background: none; border: none; font-size: 18px; cursor: pointer; opacity: .5; }
+  .cart-foot { padding: 20px 24px; border-top: 1px solid var(--border); }
+  .cart-total { display: flex; justify-content: space-between; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+  .checkout-btn { width: 100%; background: var(--forest); color: white; border: none; padding: 16px; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background .2s; }
+  .checkout-btn:hover { background: var(--forest-light); }
+
+  /* ── CART COUNT ── */
+  .cart-count {
+    background: var(--saffron);
+    color: white;
+    border-radius: 50%;
+    width: 18px; height: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    position: absolute;
+    top: -5px; right: -5px;
+    display: none;
+  }
+  .cart-btn-wrap { position: relative; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--forest); color: white; padding: 14px 28px;
+    border-radius: 50px; font-size: 14px; font-weight: 500;
+    z-index: 2000; transition: transform .35s ease; white-space: nowrap;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ── FLOATING WHATSAPP ── */
+  .whatsapp-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 1500;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25D366; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; box-shadow: 0 8px 24px rgba(37,211,102,.4);
+    cursor: pointer; transition: transform .2s;
+    text-decoration: none; color: white;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  /* ── LIVE INDICATOR ── */
+  .live-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50px; padding: 5px 14px;
+    font-size: 11px; font-weight: 600; color: white;
+    letter-spacing: 0.08em;
+  }
+  .live-dot { width: 7px; height: 7px; background: #4CAF50; border-radius: 50%; animation: pulse 2s infinite; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 350px; }
+    .about-section { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .trust-bar { gap: 24px; }
+  }
+  @media (max-width: 480px) {
+    .hero-stats { gap: 20px; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-inner">
+    <span>🌿 Free Delivery on orders above ₹499</span>
+    <span>⭐ GI Tagged Mithila Makhana</span>
+    <span>🚚 Ships across India in 2–4 days</span>
+    <span>🌱 100% Natural & Chemical-Free</span>
+    <span>🏆 India's #1 Premium Makhana Brand</span>
+    <span>🎁 Bulk orders available for events & gifting</span>
+    <span>🌿 Free Delivery on orders above ₹499</span>
+    <span>⭐ GI Tagged Mithila Makhana</span>
+    <span>🚚 Ships across India in 2–4 days</span>
+    <span>🌱 100% Natural & Chemical-Free</span>
+    <span>🏆 India's #1 Premium Makhana Brand</span>
+    <span>🎁 Bulk orders available for events & gifting</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">🪷</div>
+    <div>
+      <div class="logo-text">Mithila Makhana</div>
+      <div class="logo-sub">FROM THE LAND OF BIHAR</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="cart-btn-wrap">
+    <button class="nav-cta" onclick="toggleCart()">🛒 Cart <span id="cartCountBadge" class="cart-count">0</span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> Bihar's Finest — GI Tagged
+    </div>
+    <h1 class="hero-title">India's Purest<br><em>Makhana,</em><br>Delivered Fresh</h1>
+    <p class="hero-desc">Hand-harvested from the pristine ponds of Mithilanchal, Bihar — 
+    roasted, flavoured & shipped fresh to your door. Rich in protein, low in calories, 
+    big on taste.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">90%</div>
+        <div class="stat-lbl">India's Production<br>from Bihar</div>
+      </div>
+      <div>
+        <div class="stat-val">25+</div>
+        <div class="stat-lbl">Flavour<br>Varieties</div>
+      </div>
+      <div>
+        <div class="stat-val">4.8★</div>
+        <div class="stat-lbl">Avg Customer<br>Rating</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop All Products</button>
+      <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our Story</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-product-card">
+      <div style="margin-bottom:12px"><span class="live-chip"><span class="live-dot"></span> LIVE ORDERS FLOWING</span></div>
+      <span class="hero-emoji">🪷</span>
+      <h3>Premium Roasted Makhana</h3>
+      <p>Himalayan Salt · 200g Pouch</p>
+      <div class="hero-price-tag">₹ 299 / 200g</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">🌿</div>
+    <div class="trust-text"><strong>100% Natural</strong><span>No preservatives, No additives</span></div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🏅</div>
+    <div class="trust-text"><strong>GI Certified</strong><span>Authentic Mithila origin</span></div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🚚</div>
+    <div class="trust-text"><strong>Fast Shipping</strong><span>Delivered in 2–4 days</span></div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🔄</div>
+    <div class="trust-text"><strong>Easy Returns</strong><span>7-day hassle-free policy</span></div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">💳</div>
+    <div class="trust-text"><strong>Secure Payments</strong><span>UPI · Cards · COD</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Our Collection</div>
+    <h2 class="section-title">Every Variety. Every Mood.</h2>
+    <p class="section-sub">From classic roasted to bold Indian spices — we offer the widest range of premium makhana products in India.</p>
+  </div>
+
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterProducts('all', this)">All Products</button>
+    <button class="filter-tab" onclick="filterProducts('roasted', this)">Roasted</button>
+    <button class="filter-tab" onclick="filterProducts('flavoured', this)">Flavoured</button>
+    <button class="filter-tab" onclick="filterProducts('organic', this)">Organic</button>
+    <button class="filter-tab" onclick="filterProducts('raw', this)">Raw / Bulk</button>
+    <button class="filter-tab" onclick="filterProducts('premium', this)">Premium</button>
+    <button class="filter-tab" onclick="filterProducts('gift', this)">Gift Sets</button>
+  </div>
+
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section" id="benefits">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Why Makhana?</div>
+    <h2 class="section-title">Nature's Perfect Superfood</h2>
+    <p class="section-sub">Makhana is not just a snack — it's a powerhouse of nutrition trusted by Ayurveda for centuries.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">💪</div>
+      <div class="benefit-title">High in Protein</div>
+      <div class="benefit-text">9.7g of plant-based protein per 100g. Ideal for gym-goers, vegetarians & growing kids.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🔥</div>
+      <div class="benefit-title">Low Calorie</div>
+      <div class="benefit-text">Only 347 kcal/100g — far lighter than chips or popcorn. Perfect guilt-free snacking.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🌾</div>
+      <div class="benefit-title">Gluten-Free</div>
+      <div class="benefit-text">100% gluten-free and easily digestible. Safe for celiac patients & wheat-sensitive diets.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">❤️</div>
+      <div class="benefit-title">Heart-Healthy</div>
+      <div class="benefit-text">Rich in magnesium & potassium, helping regulate blood pressure and boost heart health.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🧘</div>
+      <div class="benefit-title">Anti-Ageing</div>
+      <div class="benefit-text">Contains kaempferol, a natural antioxidant that reduces inflammation and slows ageing.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🍽️</div>
+      <div class="benefit-title">Fasting Friendly</div>
+      <div class="benefit-text">Accepted during Navratri, Ekadashi & all major Hindu fasts. A sattvic superfood.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">💊</div>
+      <div class="benefit-title">Diabetic Friendly</div>
+      <div class="benefit-text">Low glycemic index helps regulate blood sugar levels naturally. Loved by diabetics.</div>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-icon">🧒</div>
+      <div class="benefit-title">Kid-Approved</div>
+      <div class="benefit-text">No artificial colours or flavours. Our makhana is a healthy school-box snack for children.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div>
+    <div class="about-eyebrow">OUR STORY</div>
+    <h2 class="about-title">From the Sacred Ponds<br>of Mithilanchal</h2>
+    <p class="about-text">
+      Bihar's Mithila region has cultivated makhana (Euryale ferox) for over 500 years in 
+      the wetlands of Darbhanga, Madhubani and Muzaffarpur. Each lotus seed is hand-harvested 
+      by skilled farmers, sun-dried on flat riverbanks, then popped over open fire — a craft 
+      passed down through generations.
+    </p>
+    <p class="about-text" style="margin-top:12px">
+      We work directly with 200+ farmer families, paying fair prices and bringing you the 
+      freshest makhana within 2 weeks of harvest — no cold storage, no middlemen.
+    </p>
+    <div class="about-tags">
+      <span class="about-tag">🌊 Wetland Grown</span>
+      <span class="about-tag">👨‍🌾 Farmer Direct</span>
+      <span class="about-tag">🏅 GI Tagged</span>
+      <span class="about-tag">♻️ Eco-Friendly</span>
+      <span class="about-tag">🌱 Organic Certified</span>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="about-stat-box">
+      <div class="about-stat-val">200+</div>
+      <div class="about-stat-lbl">Farmer Families<br>Partners</div>
+    </div>
+    <div class="about-stat-box">
+      <div class="about-stat-val">8+</div>
+      <div class="about-stat-lbl">Years of<br>Experience</div>
+    </div>
+    <div class="about-stat-box">
+      <div class="about-stat-val">50K+</div>
+      <div class="about-stat-lbl">Happy Customers<br>Across India</div>
+    </div>
+    <div class="about-stat-box">
+      <div class="about-stat-val">₹100B</div>
+      <div class="about-stat-lbl">India Makhana<br>Market Value 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-header reveal">
+    <div class="section-eyebrow">Customer Love</div>
+    <h2 class="section-title">What India is Saying</h2>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid"></div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="contact">
+  <h2>Get 10% Off Your First Order</h2>
+  <p>Subscribe for exclusive deals, new flavour launches & Makhana recipes straight to your inbox.</p>
+  <div class="newsletter-form">
+    <input class="newsletter-input" type="email" placeholder="Enter your email address" id="emailInput" />
+    <button class="newsletter-btn" onclick="subscribeNewsletter()">Subscribe →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">🪷 Mithila Makhana</div>
+      <div class="footer-tagline">India's finest fox nuts, sourced directly from Bihar's sacred wetlands. Pure. Natural. Delicious.</div>
+      <div style="margin-top:20px; font-size:13px; opacity:.5">FSSAI Reg: 21724015000789<br>Made in India 🇮🇳</div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#">Roasted Makhana</a></li>
+        <li><a href="#">Flavoured Varieties</a></li>
+        <li><a href="#">Organic Range</a></li>
+        <li><a href="#">Raw & Bulk</a></li>
+        <li><a href="#">Gift Sets</a></li>
+        <li><a href="#">Makhana Flour</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Farmers</a></li>
+        <li><a href="#">Certifications</a></li>
+        <li><a href="#">Media & Press</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">Track My Order</a></li>
+        <li><a href="#">Returns Policy</a></li>
+        <li><a href="#">Bulk Orders</a></li>
+        <li><a href="#">WhatsApp Us</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Mithila Makhana Pvt. Ltd. All rights reserved.</div>
+    <div class="footer-social">
+      <a class="social-btn" title="Instagram">📸</a>
+      <a class="social-btn" title="Facebook">📘</a>
+      <a class="social-btn" title="YouTube">▶️</a>
+      <a class="social-btn" title="Twitter">🐦</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Cart 🛒</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🪷</div>
+      <p>Your cart is empty.<br>Add some makhana magic!</p>
+    </div>
+  </div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">₹ 0</span></div>
+    <button class="checkout-btn">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp-float" href="https://wa.me/919876543210?text=Hi!+I+want+to+order+Makhana" target="_blank" title="WhatsApp Order">💬</a>
+
+<script>
+// ── PRODUCTS DATA ──
+const products = [
+  // ROASTED
+  { id:1, name:"Classic Himalayan Salt", cat:"roasted", emoji:"🧂", desc:"The OG! Lightly roasted with pure Himalayan pink salt. Crispy, airy & addictive.", price:299, per:"200g", badge:"bestseller", rating:4.9, reviews:2840, bg:"#FFF5E6" },
+  { id:2, name:"Desi Ghee Roasted", cat:"roasted", emoji:"🧈", desc:"Slow-roasted in pure A2 cow ghee. Rich, golden aroma — just like grandma made it.", price:349, per:"200g", badge:"hot", rating:4.8, reviews:1920, bg:"#FFF8E1" },
+  { id:3, name:"Black Pepper Roasted", cat:"roasted", emoji:"🌶️", desc:"Freshly cracked black peppercorns with a slow heat that lingers deliciously.", price:299, per:"200g", badge:null, rating:4.7, reviews:1102, bg:"#F3F0FF" },
+  { id:4, name:"Masala Roasted", cat:"roasted", emoji:"🌿", desc:"A signature Indian spice blend — jeera, amchur, chaat masala — balanced & bold.", price:319, per:"200g", badge:"hot", rating:4.8, reviews:3100, bg:"#FFF0E6" },
+  { id:5, name:"Pudina (Mint) Roasted", cat:"roasted", emoji:"🌱", desc:"Cool & refreshing mint with a kick of chilli. A summer favourite.", price:299, per:"200g", badge:"new", rating:4.6, reviews:740, bg:"#E8F5E9" },
+  { id:6, name:"Turmeric & Ginger", cat:"roasted", emoji:"🟡", desc:"Anti-inflammatory golden spice combo — delicious and functional wellness snacking.", price:329, per:"200g", badge:"new", rating:4.7, reviews:580, bg:"#FFFDE7" },
+
+  // FLAVOURED
+  { id:7, name:"Peri Peri Spicy", cat:"flavoured", emoji:"🔥", desc:"Inspired by the streets — fiery peri peri blend for the bold & adventurous.", price:339, per:"150g", badge:"hot", rating:4.9, reviews:4200, bg:"#FFEBEE" },
+  { id:8, name:"Cheese & Herbs", cat:"flavoured", emoji:"🧀", desc:"Real cheddar powder meets dried Italian herbs. Indulgent yet 100% natural.", price:359, per:"150g", badge:"bestseller", rating:4.8, reviews:2980, bg:"#FFF9C4" },
+  { id:9, name:"Sour Cream & Onion", cat:"flavoured", emoji:"🧅", desc:"Tangy cream and caramelised onion flavour — the snack bag you can't put down.", price:349, per:"150g", badge:null, rating:4.7, reviews:1540, bg:"#F8F8FF" },
+  { id:10, name:"Wasabi & Sesame", cat:"flavoured", emoji:"🍱", desc:"A bold Japanese-inspired twist. Wasabi heat balanced by nutty sesame. Gen-Z favourite.", price:369, per:"150g", badge:"new", rating:4.8, reviews:890, bg:"#E8F5E9" },
+  { id:11, name:"Coffee Caramel", cat:"flavoured", emoji:"☕", desc:"Indulgent dark roast coffee with rich caramel coating. A luxury dessert snack.", price:399, per:"150g", badge:"premium", rating:4.9, reviews:1100, bg:"#FBE9E7" },
+  { id:12, name:"Cinnamon & Jaggery", cat:"flavoured", emoji:"🍯", desc:"Traditional desi sweetness — unrefined jaggery with warming cinnamon spice.", price:329, per:"150g", badge:null, rating:4.7, reviews:920, bg:"#FFF3E0" },
+  { id:13, name:"Mango Chilli", cat:"flavoured", emoji:"🥭", desc:"The iconic Indian combo — sweet Alphonso mango with fiery red chilli powder.", price:339, per:"150g", badge:"hot", rating:4.8, reviews:2200, bg:"#FFF8E1" },
+  { id:14, name:"Dark Chocolate Dipped", cat:"flavoured", emoji:"🍫", desc:"Premium single-origin dark chocolate enrobing crispy makhana. For chocolate lovers.", price:449, per:"100g", badge:"premium", rating:4.9, reviews:1650, bg:"#EFEBE9" },
+  { id:15, name:"Lemon & Herb", cat:"flavoured", emoji:"🍋", desc:"Bright citrusy tang with dried oregano & rosemary. Refreshing & summery.", price:319, per:"150g", badge:"new", rating:4.6, reviews:430, bg:"#FFFDE7" },
+
+  // ORGANIC
+  { id:16, name:"Certified Organic Plain", cat:"organic", emoji:"🌾", desc:"NPOP certified organic makhana. No chemicals, no pesticides, just pure nature.", price:449, per:"250g", badge:"organic", rating:4.9, reviews:2100, bg:"#E8F5E9" },
+  { id:17, name:"Organic Turmeric Roast", cat:"organic", emoji:"🌿", desc:"Certified organic with cold-pressed turmeric and black pepper. Gut-healing.", price:479, per:"200g", badge:"organic", rating:4.8, reviews:940, bg:"#FFFDE7" },
+  { id:18, name:"Organic Ghee Roasted", cat:"organic", emoji:"🥣", desc:"Organic A2 desi cow ghee meets certified organic makhana. Pure luxury.", price:499, per:"200g", badge:"organic", rating:4.9, reviews:760, bg:"#FFF8E1" },
+
+  // RAW / BULK
+  { id:19, name:"Raw Makhana — Grade 6 Suta", cat:"raw", emoji:"⚪", desc:"Largest grade premium raw makhana. Perfect for cooking curries, kheer & halwa.", price:1250, per:"1 kg", badge:"premium", rating:4.8, reviews:3400, bg:"#FAFAFA" },
+  { id:20, name:"Raw Makhana — Grade 5 Suta", cat:"raw", emoji:"🔵", desc:"Medium-large grade. Best value for home use and daily cooking.", price:980, per:"1 kg", badge:"bestseller", rating:4.7, reviews:4800, bg:"#F3F3FF" },
+  { id:21, name:"Makhana Flour (Powder)", cat:"raw", emoji:"🌫️", desc:"Finely milled makhana flour. Use in rotis, cookies, protein shakes & baby food.", price:599, per:"500g", badge:"new", rating:4.7, reviews:680, bg:"#F5F5F5" },
+  { id:22, name:"Bulk Pack — 5 kg", cat:"raw", emoji:"📦", desc:"Restaurant & caterer favourite. 5 kg raw makhana, Grade 5 Suta, vacuum packed.", price:4499, per:"5 kg", badge:null, rating:4.8, reviews:1200, bg:"#FAFAFA" },
+
+  // PREMIUM
+  { id:23, name:"Gold Reserve Tin — Saffron", cat:"premium", emoji:"🌸", desc:"Limited harvest. Infused with pure Kashmiri saffron. In a collectible gold tin.", price:799, per:"150g tin", badge:"premium", rating:5.0, reviews:320, bg:"#FFF8E1" },
+  { id:24, name:"Truffle & Sea Salt", cat:"premium", emoji:"🍄", desc:"Italian black truffle oil with fleur de sel. An ultra-premium gourmet experience.", price:699, per:"120g", badge:"premium", rating:4.9, reviews:290, bg:"#ECEFF1" },
+  { id:25, name:"Rose & Pistachio", cat:"premium", emoji:"🌹", desc:"Edible rose petals and Iranian pistachios coat these oversized makhana pops.", price:649, per:"120g", badge:"premium", rating:4.9, reviews:410, bg:"#FCE4EC" },
+
+  // GIFT SETS
+  { id:26, name:"Festival Gift Box — 4 Pack", cat:"gift", emoji:"🎁", desc:"Curated set of 4 premium flavours in a beautiful festive box. Perfect for Diwali.", price:999, per:"4×100g", badge:"hot", rating:4.9, reviews:1800, bg:"#FFF3E0" },
+  { id:27, name:"Healthy Hamper — 6 Pack", cat:"gift", emoji:"🧺", desc:"Six varieties in a handwoven bamboo basket. Office gifting & corporate orders.", price:1499, per:"6×100g", badge:"new", rating:5.0, reviews:640, bg:"#E8F5E9" },
+  { id:28, name:"Starter Trial Pack", cat:"gift", emoji:"🎀", desc:"Try 8 different flavours in mini packs. Perfect introduction to premium makhana.", price:599, per:"8×50g", badge:"bestseller", rating:4.8, reviews:3200, bg:"#FCE4EC" },
+];
+
+const reviews = [
+  { stars:5, text:"Ordered the Peri Peri variety for my office snack box and everyone went absolutely crazy! Already on my 4th reorder. Can't believe something this healthy tastes this good.", name:"Priya Sharma", loc:"Bengaluru", avatar:"👩", bg:"#FFF3E0" },
+  { stars:5, text:"As a diabetic, I was always looking for guilt-free snacks. Mithila Makhana has been a complete game changer. The blood sugar stays stable and the flavours are fantastic!", name:"Rajesh Kumar", loc:"Delhi", avatar:"👨", bg:"#E8F5E9" },
+  { stars:5, text:"Got the Festival Gift Box for Diwali gifts and every single colleague loved it. Packaging is gorgeous, tastes premium. Will be ordering in bulk next year for sure.", name:"Ananya Iyer", loc:"Mumbai", avatar:"👩🏽", bg:"#F3E5F5" },
+  { stars:5, text:"The Raw Grade 6 Suta makhana I ordered for cooking kheer was exceptional. Perfectly sized, fresh aroma. Better quality than what I find in local markets.", name:"Sunil Mishra", loc:"Patna", avatar:"🧑", bg:"#FFF9C4" },
+  { stars:4, text:"Coffee Caramel makhana is a revelation! Never expected makhana to work as a dessert snack but it absolutely does. Crunchy, sweet and perfect with evening tea.", name:"Kavitha Reddy", loc:"Hyderabad", avatar:"👩🏾", bg:"#FBE9E7" },
+  { stars:5, text:"As a nutritionist I always recommend makhana to my clients. Mithila Makhana stands out for purity and consistency. The organic range is especially impressive.", name:"Dr. Nandini Joshi", loc:"Pune", avatar:"👩‍⚕️", bg:"#E1F5FE" },
+];
+
+// ── RENDER PRODUCTS ──
+let cart = [];
+
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map((p, i) => `
+    <div class="product-card" style="animation-delay:${i*0.05}s">
+      ${p.badge ? `<div class="product-badge badge-${p.badge}">${p.badge.toUpperCase()}</div>` : ''}
+      <div class="product-img" style="background:${p.bg}">
+        <span>${p.emoji}</span>
+      </div>
+      <div class="product-body">
+        <div class="product-category">${p.cat}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">₹${p.price} <span>/ ${p.per}</span></div>
+            <div class="product-stars">${'★'.repeat(Math.floor(p.rating))} <span style="color:var(--text-light);font-size:11px">${p.rating} (${p.reviews.toLocaleString()})</span></div>
+          </div>
+          <button class="add-cart" onclick="addToCart(${p.id})" title="Add to cart">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, el) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderProducts(cat);
+}
+
+// ── RENDER REVIEWS ──
+function renderReviews() {
+  document.getElementById('reviewsGrid').innerHTML = reviews.map(r => `
+    <div class="review-card" style="background:${r.bg}">
+      <div class="review-stars">${'★'.repeat(r.stars)}</div>
+      <div class="review-text">"${r.text}"</div>
+      <div class="review-author">
+        <div class="review-avatar" style="background:${r.bg};font-size:24px;">${r.avatar}</div>
+        <div>
+          <div class="review-name">${r.name}</div>
+          <div class="review-loc">📍 ${r.loc}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── CART ──
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  const existing = cart.find(c => c.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+  updateCartUI();
+  showToast(`✅ ${product.name} added to cart!`);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(c => c.id !== id);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s, c) => s + c.price * c.qty, 0);
+  const count = cart.reduce((s, c) => s + c.qty, 0);
+  
+  const badge = document.getElementById('cartCountBadge');
+  badge.textContent = count;
+  badge.style.display = count > 0 ? 'flex' : 'none';
+  
+  document.getElementById('cartTotal').textContent = `₹ ${total.toLocaleString()}`;
+  
+  const cartItems = document.getElementById('cartItems');
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🪷</div><p>Your cart is empty.<br>Add some makhana magic!</p></div>`;
+  } else {
+    cartItems.innerHTML = cart.map(c => `
+      <div class="cart-item">
+        <div class="ci-emoji">${c.emoji}</div>
+        <div>
+          <div class="ci-name">${c.name}</div>
+          <div class="ci-price">₹${c.price} × ${c.qty} = ₹${(c.price * c.qty).toLocaleString()}</div>
+        </div>
+        <button class="ci-remove" onclick="removeFromCart(${c.id})">🗑️</button>
+      </div>
+    `).join('');
+  }
+}
+
+function toggleCart() {
+  const drawer = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('cartOverlay');
+  drawer.classList.toggle('open');
+  overlay.classList.toggle('open');
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── NEWSLETTER ──
+function subscribeNewsletter() {
+  const email = document.getElementById('emailInput').value;
+  if (!email || !email.includes('@')) { showToast('❌ Please enter a valid email!'); return; }
+  showToast('🎉 Subscribed! Your 10% code is on its way!');
+  document.getElementById('emailInput').value = '';
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── LIVE ORDER COUNTER ──
+function simulateLiveOrders() {
+  const names = ["Priya from Mumbai","Rahul from Delhi","Anjali from Pune","Vikas from Chennai","Neha from Kolkata","Suresh from Hyderabad","Deepika from Ahmedabad","Arjun from Jaipur"];
+  const items = ["Peri Peri Makhana","Desi Ghee Roasted","Festival Gift Box","Cheese & Herbs","Coffee Caramel","Grade 6 Raw Makhana","Organic Plain","Gold Reserve Tin"];
+  function fire() {
+    const n = names[Math.floor(Math.random() * names.length)];
+    const item = items[Math.floor(Math.random() * items.length)];
+    showToast(`🛒 ${n} just ordered ${item}!`);
+    setTimeout(fire, Math.random() * 20000 + 15000);
+  }
+  setTimeout(fire, 5000);
+}
+
+// ── INIT ──
+renderProducts();
+renderReviews();
+simulateLiveOrders();
+
+// Re-run scroll reveal after dynamic content
+setTimeout(() => {
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, 100);
+</script>
+</body>
+</html>
